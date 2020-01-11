@@ -4,10 +4,9 @@
 Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_guide_notes/
 
 ## EDU 110: PAN 8.1 Configuration and Administration
-Platforms and Architecture
-Initial Configuration
-
-    Interface and Routing Configuration
+1.  [Platforms and Architecture](Platforms and Architecture.md)
+2.  Initial Configuration
+3.  Interface and Routing Configuration
 
     Security and NAT Policy Configuration
 
