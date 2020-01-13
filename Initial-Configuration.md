@@ -8,8 +8,8 @@
 
 ### Initial Access to System
 * MGT is out of band, connected to the management plane; default IP it is [192.168.1.1/24](https://192.168.1.1) for physical. VM is DHCP.
-* Console port (RJ45) 9600,8,N,1
-* Admin/Admin default login (nag screen until changed)
+* Console port (RJ45) 9600‐8‐N‐1
+* admin/admin default login (nag screen until changed)
 * MGT can be set for DHCP (although Static is highly recommended)
 
 Initial config
