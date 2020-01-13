@@ -1,24 +1,16 @@
 # Initial Configuration
 
 ### Administrative Controls
+* WebUI
+* Panorama
+* CLI
+* XML API
 
-WebUI
-
-Panorama
-
-CLI
-
-XML API
-
-​Initial Access to System
-
-MGT is out of band, connected to the management plane; default IP it is [192.168.1.1/24](https://192.168.1.1/24) for physical. VM is DHCP.
-
-Console port (RJ45) 9600,8,N,1
-
-Admin/Admin default login (nag screen until changed)
-
-MGT can be set for DHCP (although Static is highly recommended)
+### Initial Access to System
+* MGT is out of band, connected to the management plane; default IP it is [192.168.1.1/24](https://192.168.1.1/24) for physical. VM is DHCP.
+* Console port (RJ45) 9600,8,N,1
+* Admin/Admin default login (nag screen until changed)
+* MGT can be set for DHCP (although Static is highly recommended)
 
 Initial config
 
