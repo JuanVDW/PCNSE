@@ -1,6 +1,6 @@
 # Platforms and Architecture
 
-### Security Platform Overview
+### Cyber Attack Lifecycle
 * Recon, Weaponize, Deliver, Exploitation, Installation, Command & Control, Act on Objective
 
 ### NGFW
