@@ -1,7 +1,7 @@
 # Platforms and Architecture
 
 ### Cyber Attack Lifecycle
-* Recon, Weaponize, Deliver, Exploitation, Installation, Command & Control, Act on Objective
+* Recon, Weaponize & Deliver, Exploitation, Installation, Command & Control, Act on Objective
 
 ### NGFW
 * Identifies and inspects all traffic
