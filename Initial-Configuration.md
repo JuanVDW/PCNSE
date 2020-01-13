@@ -12,15 +12,11 @@
 * admin/admin default login (nag screen until changed)
 * MGT can be set for DHCP (although Static is highly recommended)
 
-Initial config
-
-Factory Reset instructions:
-
-'Request system private-data-reset' if you have CLI access
-
-If no CLI access, reboot into MAINT mode (see PAN documentation for further information)
-
-Hostname limited to 31 characters
+### Initial config
+* Factory Reset instructions:
+  * 'Request system private-data-reset' if you have CLI access
+  * If no CLI access, reboot into MAINT mode (see PAN documentation for further information)
+* Hostname limited to 31 characters
 
 Configure new IP if needed, hostname, domain name (if wanted), and Gateway
 
