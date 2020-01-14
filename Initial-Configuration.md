@@ -29,16 +29,15 @@
 * Inband port can be set up to for service routes to perform these services which ports to retrieve them from if MGT port is not able to.
 
 ### Configuration Management
-
-Running config: active config running on the FW - running-config.xml
-
-Candidate config: sandbox configuration; when a commit is done, candidate replaces the running config.
-
-Previous configurations are saved. These can be reverted, exported, saved out, and imported.
-
-Admin-Level commit will commit all changes made by anyone (if commit all changes is selected)
-
-Config changes are logged under the admin logged in for change tracking
+* Running config
+  * Active config running on the FW - running-config.xml
+  * Running configuration is written to both control and dataplane memory
+* Candidate config
+  * Sandbox configuration; when a commit is done, candidate replaces the running config
+  * Candidate Configuration is stored on control plane memory
+* Previous configurations are saved. These can be reverted, exported, saved out, and imported.
+* Admin-Level commit will commit all changes made by anyone (if commit all changes is selected)
+* Config changes are logged under the admin logged in for change tracking
 
 Commit locks stop other admins from committing changes
 
@@ -46,11 +45,8 @@ Config locks stop other admins from making any candidate config changes
 
 (Note from /u/jaime_cal): Admin Locks can only be removed by the admin that put the lock in place, or by a super admin.
 
-(note from /u/jaime_cal): Candidate Configuration is stored on control plane memory
 
-(note from /u/jaime_cal): Running configuration is written to both control and dataplane memory
-
-​Licensing and Software Updates
+### Licensing and Software Updates
 
 Registration with PAN is first step - support page and register new device. Generally this will send an activation code to your email.
 
