@@ -37,14 +37,9 @@
   * Candidate Configuration is stored on control plane memory
 * Previous configurations are saved. These can be reverted, exported, saved out, and imported.
 * Admin-Level commit will commit all changes made by anyone (if commit all changes is selected)
+* Commit locks stop other admins from committing changes and making any candidate config changes
+* Admin Locks can only be removed by the admin that put the lock in place, or by a super admin
 * Config changes are logged under the admin logged in for change tracking
-
-Commit locks stop other admins from committing changes
-
-Config locks stop other admins from making any candidate config changes
-
-(Note from /u/jaime_cal): Admin Locks can only be removed by the admin that put the lock in place, or by a super admin.
-
 
 ### Licensing and Software Updates
 
