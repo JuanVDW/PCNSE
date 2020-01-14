@@ -24,28 +24,18 @@
 ### Virtual Wires Interfaces
 * This is used as a L2 firewall installation in-line. This way, the firewall can be 'dropped' in without any reconfiguration of the network.
 * Interfaces will be L2, no IP's, L3 routing, FW managment or IPSec termination point is available.
-* Create VWire instance, and add the interfaces if they have been set to VWire. If interfaces are not set, save the VWire instance and then go to the interfaces and add them into the VWire under interface type. A Vwire Zone is also needed.
+* Create VWire object, and add the interfaces if they have been set to VWire. If interfaces are not set, save the VWire instance and then go to the interfaces and add them into the VWire under interface type. A Vwire Zone is also needed.
 * Vwire fully supports 802.1q VLAN tagging, and will pass tagged and untagged traffic as long as there is a security policy to allow it.
 * Multiple VWire subinterfaces can also be created. Each sub-interface can be set in any zone and uses criteria such as VLAN tags and IP classifiers.
 
 ### Layer 2 Interfaces
-
-Layer 2 switches traffic between 2+ interfaces. This makes the networks into a single ether broadcast domain.
-
-Steps to create a Layer 2 interface:
-
-create a vlan object under Network >
-
-configuring the L2 interfaces
-
-L2 does not participate in STP, but forwards STP packets.
-
-L2 can do SSL Decrypt, User-ID, App-ID, Content ID, QoS.
-
-Cannot do FW management, as no IP address.
-
-Subinterfaces can be added to an 802.1q vlan
-
-More than one VLAN can be added to the same top level port (example: e1/1.1 in vlan1 and e1/1.2 in vlan2). However, as there is no routing function, an external router, and security policies would be needed to route the data between the vlans.
-
-Best practice is to use L3 subinterfaces to provide inter-VLAN routing.
+* Layer 2 switches traffic between 2+ interfaces. This makes the networks into a single ether broadcast domain.
+* Steps to create a Layer 2 interface:
+  * Create a vlan object under Network > VLAN
+  * Configure the L2 interfaces
+* L2 does not participate in STP, but forwards STP packets.
+* L2 can do SSL Decrypt, User-ID, App-ID, Content ID, QoS.
+* Cannot do FW management as no IP address.
+* Subinterfaces can be added to an 802.1q vlan
+* More than one VLAN can be added to the same top level port (example: e1/1.1 in vlan1 and e1/1.2 in vlan2). However, as there is no routing function, an external router, and security policies would be needed to route the data between the vlans.
+* Best practice is to use L3 subinterfaces to provide inter-VLAN routing.
