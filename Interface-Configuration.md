@@ -53,7 +53,8 @@
   * Security Zone
   * Virtual Router (only if you want to route traffic to/from interface)
 * Management Profile
-  * Profile can be applied to an L3 interface. Protocols that can be allowed or denied are: Ping, Telnet, SSH, HTTP, HTTP-OCSP, HTTPS, SNMP, Response Pages, User-ID, User-ID Syslog Listener-SSL, User-ID Syslog Listener-UDP
+  * Profile can be applied to an L3 interface. Protocols that can be allowed or denied are: 
+    * Ping, Telnet, SSH, HTTP, HTTP-OCSP, HTTPS, SNMP, Response Pages, User-ID, User-ID Syslog Listener-SSL, User-ID Syslog Listener-UDP
   * Can be assigned to L3, loopback and tunnel interfaces (interfaces that have an IP address)
   * Security Policies are required to allow traffic to non-MGT interfaces
   * Can have a "permitted IP" list that will only allow a specific source IP address or subnet access to that specific set of permitted services
