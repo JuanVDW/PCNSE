@@ -65,8 +65,6 @@
   * Create Server profile, then (optional) auth sequence, then authentication profile.
   * Allow list can be used for those that will be allowed to use certain auth profiles.
 
-Viewing and Filtering Logs
-
-Clicking any link in the Monitor > Traffic (or other entries) will filter the logs to only show entries with those
-
-Filters can be saved and loaded for quick access
+### Viewing and Filtering Logs
+* Clicking any link in the Monitor > Traffic (or other entries) will filter the logs to only show entries with those
+* Filters can be saved and loaded for quick access
