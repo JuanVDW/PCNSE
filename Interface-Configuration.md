@@ -40,6 +40,24 @@
 * More than one VLAN can be added to the same top level port (example: e1/1.1 in vlan1 and e1/1.2 in vlan2). However, as there is no routing function, an external router, and security policies would be needed to route the data between the vlans.
 * Best practice is to use L3 subinterfaces to provide inter-VLAN routing
 
+### VLAN Interfaces
+* VLAN are Layer 2 802.1q network
+* VLAN objects can be assigned and IP address, and connected to Layer 3 networks for Layer 3 routing
+* Configure under Network > Network > VLAN > Add
+* All vlan interfaces will start with 'vlan' - add the ID number (NOT a vlan ID, but matching them is recommended to avoid confusion)
+* Interface must be assigned to an exiting vlan
+  * If one doesn't exist or a new VLAN interface is needed, selecting 'New VLAN' on the drop down can be done to create a new VLAN.
+  * Select the virtual router to add the interface to
+  * Select the Security Zone to add the interface to
+
+### Loopback Interfaces
+* Loopbacks are logical interfaces that do not have a physical presence. They are assigned in a security zone and can be reached by their IP through another physical main or sub interface.
+* Typical use includes Management UI access, Global Protect interface, or IPSEC tunnel interface termination point.
+* Configure under Network > Interfaces > Loopback
+  * Loopback interfaces always start with 'loopback', which cannot be changed. the ID number is set by the admin
+  * Configured the same as a Layer 3 interface; Only exception is a loopback IP must be a /32 host IP.
+  * Set the VR and the Security Zone the LB will be added to.
+
 ### Layer 3 Interfaces
 * Layer 3 is able to route data between networks
 * Each L3 interface needs an IP assigned
@@ -99,3 +117,15 @@
   * Routing and Route table has all known routes (RIB)
   * Forwarding Table has all routes of where traffic will be forwarded to (FIB)
   * Static Route Monitoring tab will show the status of all Path Monitors configured.
+
+### Policy-Based Forwarding
+* PBF rules are used to send specific traffic to an interface that is not the default route the traffic would follow from the routing table.
+  * Use cases would include a private leased line you want to use for unencrypted traffic or traffic that needs low latency (VoIP, etc), while letting non-critical encrypted traffic over a DIA (direct internet access) circuit using an IPSec Tunnel.
+  * PBF can be set using specific criteria, including source zone or interface, source user, destination IP and/or port.
+  * Includes a Path Monitoring feature; if the interface the PBF is sent out goes down, the traffic will be able to go out the other interface.
+* Configure under Policies > Policy Based Forwarding
+  * Name the Policy
+  * Enter the criteria: Source IP, Zone and/or User-ID
+  * Specify desination/application/service. It is NOT recommended to use the application, as it may take several packets to identify the traffic, and it may not be forwarded based on the PBF.
+  * Enter the details of where the traffic will be forwarded, including egress interface and optional next-hop. The Path Monitoring can also be configured.
+  * Symmetric Return can also be set to be enforced here. 
