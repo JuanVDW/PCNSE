@@ -95,7 +95,7 @@
     * Set interval for ping interval and ping counts
   * If the lowest metric link fails monitoring, and then is restored, the 'Preemptive hold time' setting will be the timeout that the firewall will wait before failing traffic back to the lower metric link. This is defaulted to 2 minutes, but can be changed.
 * Troubleshooting Routing
-* The 'More Runtime Stats' on the Network > Virtual Routers page will pull up a new screen to show the stats on the current VR.
+  * The 'More Runtime Stats' on the Network > Virtual Routers page will pull up a new screen to show the stats on the current VR.
   * Routing and Route table has all known routes (RIB)
   * Forwarding Table has all routes of where traffic will be forwarded to (FIB)
   * Static Route Monitoring tab will show the status of all Path Monitors configured.
