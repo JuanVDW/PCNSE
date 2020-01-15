@@ -55,3 +55,16 @@
    * Bidirectional NAT's can be configured (only available for static NAT).
       * To configure, check the 'bidirectional' checkbox in the NAT configuration source nat translated packet tab.
    * DIPP NAT oversubscription is when a DIPP Source NAT uses more than the available 64,000 ports available per ip address. This is done by using the destination IP of new sessions outbound to 'ride' the same active port as other traffic going to that IP address.
+* Destination NAT configuration
+   * Destination NAT is used for external traffic coming into a private or secured location inside your network.
+   * Types of Destination NAT:
+      * Static IP: 1:1 translation of inbound traffic
+      * Optional Port Forwarding: Can route to multiple internal servers based on Port number (25 to mail, 80 to web, etc)
+   * Configuration:
+      * Create a Destination NAT policy, defining the source and destination (pre-nat on both)
+           * Incoming: (any or specific) to Destination (external routable IP) - Untrust to Untrust typically for example, with a destination translation to the internal IP address
+      * Create a security policy that permits the post NAT zone (and IP's if needed) to the Pre-Nat destination IP/app/service/action
+      * Security Policy does pre-nat source/dest, post-nat destination zone.
+      * Destination Nat Port Forwarding Configuration:
+          * When configuring the Destination NAT address under the 'Translated Packet' tab, put in the translated port of the destination
+          * A destination NAT can be set with different destination translation IP's and ports from the same external facing IP, as long as the service is specified.
