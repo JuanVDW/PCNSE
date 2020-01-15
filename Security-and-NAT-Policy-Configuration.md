@@ -65,6 +65,6 @@
            * Incoming: (any or specific) to Destination (external routable IP) - Untrust to Untrust typically for example, with a destination translation to the internal IP address
       * Create a security policy that permits the post NAT zone (and IP's if needed) to the Pre-Nat destination IP/app/service/action
       * Security Policy does pre-nat source/dest, post-nat destination zone.
-      * Destination Nat Port Forwarding Configuration:
+      * Destination NAT Port Forwarding Configuration:
           * When configuring the Destination NAT address under the 'Translated Packet' tab, put in the translated port of the destination
           * A destination NAT can be set with different destination translation IP's and ports from the same external facing IP, as long as the service is specified.
