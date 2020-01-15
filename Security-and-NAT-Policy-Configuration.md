@@ -30,10 +30,28 @@
 * Rules can be reordered, disabled, deleted, added, cloned
 * Unused rules can be shown by clicking the 'Highlight Unused Rules' checkbox at the bottom of the screen
 * Address Objects is used to give a familiar name(s) to a single IP, IP range or an FQDN (functional dns resolution is needed for FQDN)
-* ess Groups are a group of Address Objects. Groups are used to help simplify firewall administration.
+* Address Groups are a group of Address Objects. Groups are used to help simplify firewall administration.
+* Tags are used to help organize and 'tag' rules that are in related policy groups. examples are: mail, web, DC, SQL, etc
+* Custom Services can be created to help provide simplification and identity to services. In services, you can specify a single port, multiple ports with commas, or a range of ports with a dash.
+* For the pre-defined intra/interzone allow/deny rules, choose override to set logging or other profile settings such as av/mal/vuln profiles.
 
-Tags are used to help organize and 'tag' rules that are in related policy groups. examples are: mail, web, DC, SQL, etc
-
-Custom Services can be created to help provide simplification and identity to services. In services, you can specify a single port, multiple ports with commas, or a range of ports with a dash.
-
-For the pre-defined intra/interzone allow/deny rules, choose override to set logging or other profile settings such as av/mal/vuln profiles.
+### Network Address Translation
+* NAT policy is evaluated after the destination zone route lookup
+* NAT policy is applied just before packet is forwarded.
+* NAT types are Source and Destination, and these are from the perspective of the firewall.
+* Source NAT configuration
+   * Source NAT is generally used from traffic on private internal IP's to a publicly routable IP (user inside to server outside). Types of Source NAT's include:
+      * Static IP: fixed 1-to-1 translation; used when a NAT IP needs to remain the same IP and Port. This can be done with an IP address range, but the translation will always be static 1:1; in a 10-IP range, a x.y.z.2 source will always translate to z.y.x.2 destination.
+      * Dynamic IP: 1-to-1 ip address translation only (no port number); can be used with a single or pool of IP's. Generally used for a set number of internal hosts with a matching number of external IP's, but static isn't required.
+      * Dynamic IP and port (DIPP): This is used for multiple IP's to one or a few IP's, by allowing the connection to use another port than the default service. This is generally used for internet access outbound from home and business connections.
+   * To use Source NAT:
+      * Create a NAT policy rule: Original packets (IP's of client(s)) that will be using the NAT (source address), destination address (if needed), and the type of source translation (Static, Dyn, DynDIPP), and the IP to translate to.
+      * A security policy will be needed to allow the traffic. The security policy will include:
+           * Source Address (private/internal client IP's/subnet)
+           * Source Zone where client IP's reside
+           * Destination Zone (where IP to NAT to exists)
+           * Any application or services
+           * Allow the traffic on the policy
+   * Bidirectional NAT's can be configured (only available for static NAT).
+      * To configure, check the 'bidirectional' checkbox in the NAT configuration source nat translated packet tab.
+   * DIPP NAT oversubscription is when a DIPP Source NAT uses more than the available 64,000 ports available per ip address. This is done by using the destination IP of new sessions outbound to 'ride' the same active port as other traffic going to that IP address.
