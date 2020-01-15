@@ -63,3 +63,39 @@
   * Different L3 sub-ints can be added to the same physical interface, but can only route at layer 3 between them if there is a route at (and security policy for the traffic) in the VR.
   * The configuration is the same as a standard Layer 3 interfaces configuration, with the exception of adding a vlan tagged
   * Untagged L3 sub-ints can be used, but the 'untagged interface' must be selected on the main interface advanced tab.
+
+### Virtual Routers
+* Used for Layer 3 IP routing
+* Supports one or more static routes
+* Supports multiple dynamic routing protocols, including RIPv2, OSPFv2, OSPFv3, BGPv4
+* Supports Multicast routing protocols PIM-SM and PIM-SSM (both using pimv2). IGMP v1, v2, v3 are also supported on host-facing interfaces.
+* Configure under Network > Virtual Routers
+  * Give Name
+  * Add L3 main, sub ints or tunnel interfaces
+    * When interfaces are added, the connected routes are automatically populated into the routing table for traffic forwarding
+  * Administrative Differences are used to determine routing decisions when identical destination routes are present.
+* To add a default static routes, click: Network > Virtual Routers > Static Routes > Add
+  * Give the route a name
+  * Add a default of 0.0.0.0/0
+  * Specify the interface this route will forward packets on (security policy will be needed to route the traffic)
+  * Set the next hop type from the list: IP Address, FQDN, Next VR, Discard or None. Typically a default route is sent to a next hop IP address (upstream to an edge router or ISP link). Next VR sends it to the specified Virtual router (not this one), Discard will Discard (and no log). None is used if there is no text hop for the route.
+  * Set any changes to the admin distance that are needed. Administrative distance defaults are specified by the type of route (static, connected, ospf, bgp, etc). Leaving this blank will set it to the default value.
+  * Set any metric changes desired. This is useful if you have multiple links out and want to prefer one over the other. If the preferred link fails, the other route can be used to forward packets.
+  * Select which routing table to install the route in: Unicast, Multicast, Both or no install. No install would stage the route, but would not be actively used.
+  * Bi-Directional Forwarding can be selected. Both endpoints must support BFD. (see docs for more details)
+    * BFD is not supported on the PA-200 or the PA-500
+* Multiple Static Default Routes
+  * Multiple SDR's can be configured
+  * Route with lowest metric will be installed in the forwarding table
+  * Path Monitoring can be used to determine if the route is usable
+  * If ath Monitoring detects a failure, FW will switch to the higher metric route until the lower metric path is restored.
+  * Path Monitoring can be configured under: Network > Virtual Routers > Static Routes > Add
+    * On the bottom of the static route configuration, click the check on Path Monitoring
+    * Multiple failure conditions can be added. Sngle or multiple source/dest entries can be set as criteria. select either 'any' or 'all' when configuring more than one condition.
+*On the source IP, a drop-down provides all IP's configured on the firewall. Generally the IP on the interface being configured for path monitoring is selected.
+
+Add the destination IP to send ping requests
+
+Set interval for ping interval and ping counts.
+
+If the lowest metric link fails monitoring, and then is restored, the 'Preemptive hold time' setting will be the timeout that the firewall will wait before failing traffic back to the lower metric link. This is defaulted to 2 minutes, but can be changed.
