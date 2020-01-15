@@ -6,7 +6,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 1.  [Platforms and Architecture](Platforms-and-Architecture.md)
 2.  [Initial Configuration](Initial-Configuration.md)
 3.  [Interface Configuration](Interface-Configuration.md)
-4.  Security and NAT Policy Configuration
+4.  [Security and NAT Policy Configuration](Security-and-NAT-Policy-Configuration.md)
 5.  Application ID Configuration
 6.  Content ID
 7.  URL Filtering
