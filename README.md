@@ -17,6 +17,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 12. Site to Site VPN's
 13. Reporting and Monitoring
 14. High Availability
+15. Security Best Practices
 
 ## EDU 120: PAN 8.1- Managing Firewalls At Scale (Panorama)
 1.  Panorama Overview
@@ -24,3 +25,16 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 3.  Adding Firewalls to Panorama
 4.  Configuring High Availability (HA)
 5.  Templates
+
+## PCNSA
+For PCNSA exam only these topics are relevant:
+* Next-Generation Security Platform and Architecture
+* Initial Configuration
+* Interface Configuration
+* Security and NAT Policies
+* App-ID
+* Content-ID
+* User-ID
+* URL Filtering
+* Monitoring and Reporting
+* Security Best Practices
