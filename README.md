@@ -8,7 +8,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 3.  [Interface Configuration](Interface-Configuration.md)
 4.  [Security and NAT Policy Configuration](Security-and-NAT-Policy-Configuration.md)
 5.  [App-ID](App-ID.md)
-6.  Content ID
+6.  [Content ID](Content-ID.md)
 7.  URL Filtering
 8.  Decryption
 9.  Wildfire
