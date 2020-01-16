@@ -51,3 +51,4 @@
 * App-ID DB is updated weekly, and can be added to the application/threat auto update. It can also be manually downloaded and installed.
 * A check can be done on the updated App-ID under Object > Applications, and clicking on the 'review policies' on the bottom of the page.
 * On the Application > Review policies page, you can see what rules will be impacted by the new application matches.
+* To minimize the risk of installing new App‐ID updates , select "Disable new apps in content update"
