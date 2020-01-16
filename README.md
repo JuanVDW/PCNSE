@@ -26,7 +26,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 4.  Configuring High Availability (HA)
 5.  Templates
 
-## PCNSA
+## Comment
 For PCNSA exam only these topics are relevant:
 * Next-Generation Security Platform and Architecture
 * Initial Configuration
