@@ -98,4 +98,67 @@
      * Continue only functions with web-browsing
 * The File Block can decode up to 4 layers of encoding. Encoding includes files such as .zip, .tar, docx, .gzip, etc
      * The 'Multi-Level Encoding' needs to be set under the 'File Types' in the file block rule
-     
+ 
+### Attaching Security Profiles to Security Policy Rules
+* Security Groups can be used to group a set of Security profiles. This will simplify Security Policy rule maintenance and deployment by selecting one group that can contain AV, ASW, Vuln, URL Filtering, File Blocking, Wildfire and Data Filtering Profiles.
+* You can also assign individual Security Profiles to a rule
+
+### Telemetry and Threat Intelligence
+* Opt in is required, and can be customized to what data you want to share
+* Information sent to PAN is sanitized before being sent to PAN, and is not shared with any 3rd parties.
+* Telemetry can be configured under Device > Setup > Telemetry and Threat Intelligence. The check boxes can be selected for what you want to upload. A download box in the corner can be used to get a copy of the 100 most recent folder with packet captures and threat data that has been sent to PAN.
+
+### Denial of Service Protection
+* DoS is Packet based, not session based
+* Use packet header info rather than signature matching.
+* These are not linked to Security Policies.
+* 2 types of protection:
+     * Zone Protection:
+         * Provides edge protection
+         * First line of defense
+         * Flood Protection:
+            * Protects agains most common attack types, including UDP flood, Syn Flood, ICMP Floods
+            * All Categories use a random early drop, except SYN (provide choice of RED or SYN Cookies)
+         * Reconnaissance Protection:
+            * Protects against TCP/UDP/ICMP sweeps and port scans within the criteria set
+            * Actions include:
+               * Allow: Permits the scan
+               * Alert: Generates an alert for each scan that matches the time interval
+               * Block: Blocks the attempts
+               * Block IP: Can be specified to block traffic from the source or for the source/destination combo.
+         * Packet Based Attack Protection
+            * Protects agains specific type of packet attacks. Examples include Spoofed IP, fragmented traffic, timestamp forging,...
+         * Protocol Protection:
+            * Applies to L2 or Vwire zones only
+            * Used to allow or deny non-IP protocols can move between zone
+            * Include list will allow specified protocols only; Exclude list will allow all but the specified protocols
+         * Zone Protection is enabled on a 'per-zone' basis
+         * Only one Profile can be set per zone
+     * DoS Policy & Profiles
+         * Provide flexible rules and matching criteria
+         * Can be used for specific hosts that are critical or have been hit previously
+         * This can be based on match criteria such as Source/Desination zone/interface, IP address, user and services
+         * Policy include:
+            * Protect:
+""not clear part"""
+Aggregate profile: applies limits to ALL incoming traffic
+
+Classified Profile: applies limits to a single IP address
+
+Allow: Permit all packets
+
+Deny: Drop all packets
+
+Added under: Polices > DoS Protection > Add
+
+Specify match for source/destination/option-protection tabs
+
+You can specify the aggregate and/or classified profile if Protect is selected
+
+Example setting is to protect a web server from attacks or floods.
+
+Added under: Objects > Security Profiles > DoS Protection > Add
+
+This will allow to set the profile options for flood proection. Syn, UDP, ICMP, ICMPv6 and Other IP.
+
+Resource Protection can be set to limit sessions to a host to prevent port depletion or resource (cpu/memory) exhaustion
