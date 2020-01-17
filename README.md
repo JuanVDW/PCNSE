@@ -10,7 +10,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 5.  [App-ID](App-ID.md)
 6.  [Content ID](Content-ID.md)
 7.  [URL Filtering](URL-Filtering.md)
-8.  Decryption
+8.  [Decryption](Decryption.md)
 9.  Wildfire
 10. User-ID
 11. GlobalProtect
