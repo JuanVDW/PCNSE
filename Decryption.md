@@ -87,3 +87,33 @@
         * After creating a profile, it can be applied to a decryption policy.
         * A default profile is provided that can be used/cloned/modified.
         * Rules for the decrypted traffic will need to be present. For example, if traffic is web-browsing, google docs, or another encrypted application setting, security policies allowing that traffic must be present or the traffic will be dropped as matching no FW rules.
+
+### SSL Inbound Inspection
+* FW Can inspect inbound SSL traffic
+* The internal server's cert and private key must be loaded on the firewall
+* The firewall will decrypt and read the traffic, and then forwards the original encrypted traffic to the server
+    * Note that the traffic will be forwarded only if it is not blocked/dropped by a security policy on the firewall.
+* To create an SSL inbound inspection policy:
+    * Import the server certificate and private key into the firewall (PEM and PKCS12 formats supported)
+    * Create a decryption policy under Policies > Decryption > Add - under Options, select 'Decrypt'
+    * (Optional) Create a decryption profile that can be added to the decryption policy
+    
+### Other Decryption Topics
+* Some applications may not work with SSL Forward Proxy
+    * Application with client-side certs
+    * Non-RFC compliant apps
+    * Servers using unsupported cryptographic settings
+* If an application fails, the site is added to the excluded cache list for 12 hours
+* Decryption Exclusion are apps that encryption is known to break
+    * The prepopulated list is under Device > Certificate Management > SSL Decryption Exclusion
+    * Custom domains can be added to this list, and wildcards are supported.
+* If the decryption policy is set to an action of 'no-decrypt', the profile attached to the rule can still check for expired or untrusted certificates. This can be done under 'No Decryption' tab in the profile.
+* Decryption Mirroring can mirror decrypted traffic to a capture device for DLP and/or network forensics
+    * Requires a (free) licence to activate; contact TAC support to get the license key. Key is perpetual, does not need renewal.
+    * Only available on the PA-3000, PA-5000 and PA-7000 series firewall.
+* Hardware Security Module (HSM) are a hardware storage for keys for additional security features (FIPS)
+    * PA-3000, PA-5000, PA-7000, and PA-VM series; Panorama VM, and M100e
+* The traffic log can be used to determine if the traffic is being decrypted by the firewall
+    * Also can be done by setting a log filter for Flags, Has, SSL Proxy.
+* Troubleshooting SSL sessions
+    * Using the log filter to search for 'session end reason' 'equal' 'decrypt error', you can see what sessions are not being decrypted.
