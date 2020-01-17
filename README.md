@@ -15,7 +15,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 10. User-ID
 11. GlobalProtect
 12. Site to Site VPN's
-13. Reporting and Monitoring
+13. Monitoring and Reporting
 14. High Availability
 15. Security Best Practices
 
@@ -28,10 +28,10 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 
 ## Comment
 For PCNSA exam only these topics are relevant:
-* Next-Generation Security Platform and Architecture
+* Platform and Architecture
 * Initial Configuration
 * Interface Configuration
-* Security and NAT Policies
+* Security and NAT Policies Configuration
 * App-ID
 * Content-ID
 * User-ID
