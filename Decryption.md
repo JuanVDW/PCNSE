@@ -59,4 +59,31 @@
          * Generate a self-signed CA Certificate from the FW
          * Generate a CA Cert using CSR
          * Import a CA Certificate
-* The FW will sort the certificates in a hierarchy in order of the CA chain, root to intermediate to device.
+* The FW will sort the certificates in a hierarchy in order of the CA chain, root to intermediate to device
+
+### SSL Forward Proxy Decryption
+* An SSL Forward Proxy decryption is used to intercept and decrypt SSL session in order to inspect the traffic for nefarious contents
+* Steps in this process are:
+    * Client sends request to external server through firewall
+    * Firewall intercepts the SSL request
+    * Firewall then contacts the external server and sends that server the FW cert
+    * External server responds with its server certificate; firewall validates certificate
+    * The SSL session is then established between the server and the firewall
+    * The firewall then sends a copy of the remote server cert, signed with the FW SSL certificate
+    * The client validates the certificates and the session continues
+* The firewall will sign the certificate sent to the client with its firewall trust cert if the external servers cert is signed by a CA it trusts. If it doesn't have a CA the FW knows/trusts, the FW will send back it's firewall untrust certificate, and the client is shown an untrusted warning page in their browser.
+* To configure Forward Proxy: 
+    * Configure a Forward Trust Certificate
+    * Configure a Forward Untrust Certificate
+      * Generate a new cert on FW; cert should not be trusted by SSL clients, but ability to sign other server certs.
+      * Do not copy; this should be untrusted and unknown to any CA.
+      * Select 'CA' checkbox on this cert
+      * Configure as forward untrust cert in properties
+    * Configure SSL Forward Proxy
+      * Under Policies > Decryption (be sure to know what traffic is protected by local/state/national laws and cannot be decrypted).
+    * A decryption profile allows check on both decrypted traffic and traffic excluded from decryption
+        * Allows to block sessions unsupported protocols, cypher suites, or SSL client auth.
+        * Block sessions based on certificate status: revoked, unknown, expired, etc
+        * After creating a profile, it can be applied to a decryption policy.
+        * A default profile is provided that can be used/cloned/modified.
+        * Rules for the decrypted traffic will need to be present. For example, if traffic is web-browsing, google docs, or another encrypted application setting, security policies allowing that traffic must be present or the traffic will be dropped as matching no FW rules.
