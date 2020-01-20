@@ -114,3 +114,34 @@
     * `show users user-ids`
     * `show user ip-user-mappings all`
     * `show user ip-user-mappings` (ip/netmask)
+
+### Configuring Group Mapping
+* Server profiles with LDAP servers will be contacted, which order, and where to search the directory tree.
+    * Defaults to port 389; if SSL is configured on the server, then 636 is available.
+    * Type is the type of LDAP Server
+    * Base DN should auto-populate when you click the drop-down menu
+        * To check the Base DN manually, on the server open active directory domains and trust > Microsoft Console Snap-In - look at the name of the Top-level domain
+    * Bind DN and Password will be used to auth users and read the LDAP directory. The Bind DN will depend on your DC configuration
+        * If Universal Groups are used, the GC must be used to capture group memberships, and the LDAP port must be set to 3268
+    * Bind, Search and Retry timeouts can be changed
+* To configure Group Mapping, open Device > User Identification > Group Mapping Settings > Add
+    * Select the server profile for your AD/LDAP server profile
+    * The domain setting is generally blank; only enter a name if NetBIOS needs to override.
+    * Groups objects should be dynamically populated by the LDAP server; these can be manually changed to look in specific locations.
+* Group include list will allow you to filter specific groups to be included. If no groups are added to the 'included groups' section, then all groups are added.
+    * It is recommended if you have a large/complex tree/forest, to specify groups. This will reduce search time and CPU utilization.
+* Custom Groups allow you to set certain filters so that a filter will match certain critera, but are not in a specific LDAP/AD user group.
+    * Examples could be: Department=Sales, City=Dallas, etc
+    * Can help without the need for an AD Admin to create or modify existing structure.
+    * User-ID also logs custom groups.
+
+### User-ID and Security Policy
+* In the security policy rules, the options under the Users section are:
+    * any: Any user if they match the rest of the rule criteria
+    * pre-logon: used with certain GP configurations and implementations
+    * known-user: a known/mapped user
+    * unknown: an unmapped/unmatched user/ip address
+    * select: a specific user or group specified
+* Note: The source IP and the source user are processed with a logical AND condition. So the user ID and the source IP range must match.
+    * This can be used in places to allow access only if someone is connected to a network segment that is physically on-site at an office, and block access if someone is connected via GP or other VPN.
+* Small office can use Users, however in larger environments, groups are best to base rules on.
