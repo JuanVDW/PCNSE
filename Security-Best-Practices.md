@@ -16,3 +16,10 @@
     * When all the rules have been converted (done after a 30-day period of in-line vwire data gathering), and all business critical traffic is confirmed to not be hitting the any/any/allow rule, change the any/any/allow to an any/any/deny rule, and validate that no critical traffic is being blocked
 * After the build-out of the application-based rules, rule consolidation, customization and risk analysis can be done. Shadow rules, address objects, application groups and unused rules can all be evaluated and combined or removed if not needed.
     * Address object groups, applications groups are examples that can be built/updated to help better organize FW rules.
+
+### Heatmap and BPA
+* This compares your config to similar companies in your industry, and provides a 'Best Practice Assessment'. only available to employees and partners
+* Generate a tech support file, and downloaded
+* Heatmap analyzes and provides an assessment with similar companies
+* BPA report will show a pass or fail based on best practices. Recommendations are provided to help remediate the issues.
+* Details are provided to show what criteria was used to come to this conclusion
