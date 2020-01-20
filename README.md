@@ -2,7 +2,7 @@
 
 Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_guide_notes/
 
-## EDU 110: PAN 8.1 Configuration and Administration
+## EDU 110: PAN 8.1 - Configuration and Administration
 1.  [Platforms and Architecture](Platforms-and-Architecture.md)
 2.  [Initial Configuration](Initial-Configuration.md)
 3.  [Interface Configuration](Interface-Configuration.md)
@@ -19,7 +19,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 14. High Availability
 15. Security Best Practices
 
-## EDU 120: PAN 8.1- Managing Firewalls At Scale (Panorama)
+## EDU 120: PAN 8.1 - Managing Firewalls At Scale (Panorama)
 1.  Panorama Overview
 2.  Panorama Initial Configuration
 3.  Adding Firewalls to Panorama
