@@ -17,7 +17,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 12. Site to Site VPN's
 13. Monitoring and Reporting
 14. High Availability
-15. Security Best Practices
+15. [Security Best Practices](Security-Best-Practices.md)
 
 ## EDU 120: PAN 8.1 - Managing Firewalls At Scale (Panorama)
 1.  Panorama Overview
