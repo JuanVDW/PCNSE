@@ -11,7 +11,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 6.  [Content ID](Content-ID.md)
 7.  [URL Filtering](URL-Filtering.md)
 8.  [Decryption](Decryption.md)
-9.  Wildfire
+9.  [Wildfire](Wildfire.md)
 10. [User-ID](User-ID.md)
 11. GlobalProtect
 12. Site to Site VPN's
