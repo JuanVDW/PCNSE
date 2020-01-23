@@ -28,13 +28,13 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 
 ## Comment
 For PCNSA exam only these topics are relevant:
-* Platform and Architecture
-* Initial Configuration
-* Interface Configuration
-* Security and NAT Policies Configuration
-* App-ID
-* Content-ID
-* User-ID
-* URL Filtering
-* Monitoring and Reporting
-* Security Best Practices
+* [Platforms and Architecture](Platforms-and-Architecture.md)
+* [Initial Configuration](Initial-Configuration.md)
+* [Interface Configuration](Interface-Configuration.md)
+* [Security and NAT Policy Configuration](Security-and-NAT-Policy-Configuration.md)
+* [App-ID](App-ID.md)
+* [Content ID](Content-ID.md)
+* [User-ID](User-ID.md)
+* [URL Filtering](URL-Filtering.md)
+* [Monitoring and Reporting](Monitoring-and-Reporting.md)
+* [Security Best Practices](Security-Best-Practices.md)
