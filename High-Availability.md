@@ -84,3 +84,46 @@
 * HA Heartbeat on the management port
     * Helps to prevent split-brain
     * Happens when a non-redundant control link goes down
+
+### Active/Passive HA Configuration
+* Prepare In-band Interface
+    * Set interface type as HA
+* Configured under Device > High Availability
+    * Each section here can be configured depending on the needs of the deployment
+* Enable HA A/P mode under Device > High Availability > General
+    * Select Mode (A/A or A/P)
+    * Matching Group ID's for the HA Pair
+    * Description (useful if configuring multiple HA configurations)
+    * Check enable config sync to automatically sync any config changes to the peer
+    * Add the Peer IP address
+        * HIGHLY recommended to add a backup peer IP Address
+* Configure the Control Link
+    * Under Device > High Availability > General
+    * Select the Control Link (HA1)
+        * Select management port or another configured in-band port
+        * MGT Port is recommended if a dedicated HA port is not available
+        * Add a gateway if the peer is in a different subnet
+    * Control link can be encrypted
+        * Private keys will need to be exported/imported from the certificate configuration for this to function.
+    * Backup link can be configured using an in-band port
+* Configure the DataLink
+    * If available, configured on the HA2 link
+    * If using in-band and the peer is on a different subnet, add a gateway
+    * An HA2 keepalive can also be configured
+        * To prevent split-brain, use the action 'log only'
+    * Select 'session synchronization' to ensure sessions are sync'd
+    * A backup datalink can also be configured
+* Election Settings
+    * Device Priority can be set if one should be preferred to be the Primary
+    * Preemptive can be set if a specific firewall should be primary if available. The firewall with the lower numerical value has the higher priority and will be primary if both are active and pre-empt is set.
+    * HA Timer can be changed, however leaving at recommended unless a specific reason is needed for change.
+* Set the passive link state to auto (optional)
+* Link Monitoring (optional)
+    * Configured under Device > High Availability > Link and Path Monitoring
+        * Different link groups can be configured with different failure conditions
+        * Example: Critical links can force a failover if any of the links fail. Other links can be set if all links fail.
+* Path Monitoring (optional)
+    * Configured under Device > High Availability > Link and Path Monitoring
+    * Options for VWire Path, VLAN Path and/or a Virtual Router Path
+        * A VWire will need a source and destination IP
+        * Virtual Router monitoring does not need a source, as a route lookup will be done to determine the source
