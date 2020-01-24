@@ -127,3 +127,23 @@
     * Options for VWire Path, VLAN Path and/or a Virtual Router Path
         * A VWire will need a source and destination IP
         * Virtual Router monitoring does not need a source, as a route lookup will be done to determine the source
+
+### Monitoring HA state
+* During Boot, a FW looks for an HA Peer; after 60 seconds, if a peer hasn't been discovered, the FW will boot as Active.
+* If a peer is found, it will negotiate with the peer
+    * If Preempt is active, determine who has highest priority - this FW becomes active.
+* If a FW is in a suspend state, it will not participate in a FW election
+* States an A/P FW can be in are:
+    * Initial: Transient state when it joins an HA pair
+    * Active: normal state, primary and processing traffic
+    * Passive: normal traffic is discarded, may process LLDP and LACP traffic
+    * Suspended: administratively disabled
+    * Non-functional: FW is non-functional and will need to have the issues resolved before it can return to service
+* States of the individual members can be added as a widget on the Dashboard
+* Add under Dashboard > Widgets > System > High Availability
+* This will show at a glance the status
+* Green: Good
+* Yellow: Warning (normal state for a standby firewall in an A/P pair)
+* Red: Error to be resolved
+* When an HA Pair is initially formed, a manual sync will need to be done. This screen can initiate a 'sync to peer' push.
+* System Log will show the events in an HA Pair negotiation
