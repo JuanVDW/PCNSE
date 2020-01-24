@@ -44,3 +44,43 @@
     * Licenses are unique to each FW; each needs matching licenses
     * Matching Slot configurations (for chassis 5000/7000 series)
     * VM's must be on the same hyper-visor, and have same number of CPU Cores
+
+### HA Components and Operations
+* HA Control Link is L3 link that requires an IP address
+    * Used to exchange heartbeats and hellos and HA state info
+    * Used to exchange routing and user ID information
+    * Active firewall uses this to exchange config change information
+* HA Datalink is a L2 Link, but can be configured in L3 that requires and IP
+    * L3 is required if the data links are not on the same subnet
+    * In L2 mode, the Datalink uses ethernet type 0x7261
+    * The Datalink synchronize sessions, forwarding table, IPSec SA's and ARP tables in the HA Pair
+    * Dataflow is unidirectional from the Active to Passive firewall
+* Some models have dedicated HA ports, other models will use MGT or other in-band ports
+    * Dedicated HA Ports are on 3000, 4000, 5000 and 7000 models
+    * HA1/HA2 ports can be directly connected via ethernet cable
+    * Recommended to use the MGT port as the control link
+        * Any in-band port used must be configured as type HA
+* HA Backup Links are recommended for the control link, to prevent the FW's going into 'split-brain' mode
+    * Backup links must be on separate physical ports
+    * Backup links must be in separate subnets as the primary backup links
+* PA-7000 series mandates the use of specific ports on the Switch Management Card (SMC)
+    * HA1-A is the control link; connect to same port on the 2nd firewall (or through switch/router)
+    * HA1-B is the backup control link; connect to same port on 2nd firewall (or through switch/router)
+    * Backup control link cannot be configured on the MGT or NPC Data ports
+    * High Speed Chassis Interconnects (HSCI) are used as the Primary and backup Datalinks
+        * If distance is beyond the scope of the HSCI ports, inband ports can be used
+* HA firewalls can be set with a device priority to indicate a preference for which should be active
+    * Enable Pre-empt on both firewalls if you want one firewall to become the active firewall when it is available/brought online
+* Failure Detection
+    * Hello and Heartbeats to confirm responsiveness and availability
+    * Link Groups can be configured to validate interfaces are up
+    * Path groups can monitor remote IP's to validate reachability
+    * These items can be configured for any/all and the failure conditions
+    * Internal Health checks are done to validate hardware is healthy
+* HA Timers
+    * HA Timers enable the firewall to detect failures and fail over
+    * Timer profiles simplify setting HA timer settings
+    * Advances enables individual timer modification
+* HA Heartbeat on the management port
+    * Helps to prevent split-brain
+    * Happens when a non-redundant control link goes down
