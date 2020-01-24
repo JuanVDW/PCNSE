@@ -16,7 +16,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 11. GlobalProtect
 12. Site to Site VPN's
 13. [Monitoring and Reporting](Monitoring-and-Reporting.md)
-14. [igh Availability](High-Availability.md)
+14. [High Availability](High-Availability.md)
 15. [Security Best Practices](Security-Best-Practices.md)
 
 ## EDU 120: PAN 8.1 - Managing Firewalls at Scale (Panorama)
