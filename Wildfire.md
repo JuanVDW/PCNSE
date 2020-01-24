@@ -53,3 +53,14 @@
 * The profile can be added as an individual or as part of a group
     * If a file block profile blocks a file, the file is not sent to wildfire for analysis.
 * Updates are available under Device > Dynamic Updates. With a wildfire licence, you can specify to updates from 1 minute to every hour. If you do not have a license, it can be set to update once a day.
+
+### Wildfire Reporting
+* Each time a file is analyzed, it reports its findings back to the firewall. The amount of information reported is configurable.
+* To verify successful uploads, you can use the CLI command: `debug wildfire upload-log show`
+    * Output should indicate an uploaded successful
+* Detailed reports can be viewed by clicking the magnifying glass, and the analysis report tab to get details on users, and the file details.
+* More details can be seen at wildfire.paloaltonetworks.com - this will give a breakdown of the category of findings (benign, greyware, malware, phishing).
+    * Files can also be manually uploaded on this portal as well
+    * Reports button on the web portal can let you generate a custom report, and individual entries can be viewed
+    * Email reports can also be configured on this to get automatic reports
+    * If a file was found to be flagged as something other than benign, you can open the individual report, scroll to the bottom and submit a request to have it reviewed
