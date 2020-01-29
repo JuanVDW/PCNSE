@@ -10,14 +10,14 @@
 * Zone types support specific interfaces:
   * Tap zone: tap interfaces
   * Tunnel zone: no interface
-  * Layer 2 Zone: Layer 2 interface
+  * Layer 2 zone: Layer 2 interface
   * Virtual Wire: VWire interfaces
-  * Layer 3 Zone: L3, Aggregate, VLAN, Loopback and Tunnel interfaces
+  * Layer 3 zone: L3, Aggregate, VLAN, Loopback and Tunnel interfaces
 * Creating a zone is done by naming the zone, selecting the type of zone (from the list above). Interfaces can be added at this time, or later by editing the interface.
 
 ### TAP Interfaces
 * Interface for receiving data from a mirror port on a switch. Generally used to gather data on the network in preparation for building security polices prior to cutover.
-* TAP cannot do anything with the traffic blocked, shaped,...)
+* TAP cannot do anything with the traffic (blocked, shaped,...)
 * TAP must be assigned to a TAP security zone
 * An Any/Any/Allow rule set with source/dest zones to the TAP interface is needed to start this data gathering, or the data is dropped by the FW in the default deny rule.
 
@@ -39,24 +39,6 @@
 * Subinterfaces can be added to an 802.1q vlan
 * More than one VLAN can be added to the same top level port (example: e1/1.1 in vlan1 and e1/1.2 in vlan2). However, as there is no routing function, an external router, and security policies would be needed to route the data between the vlans.
 * Best practice is to use L3 subinterfaces to provide inter-VLAN routing
-
-### VLAN Interfaces
-* VLAN are Layer 2 802.1q network
-* VLAN objects can be assigned and IP address, and connected to Layer 3 networks for Layer 3 routing
-* Configure under Network > Network > VLAN > Add
-* All vlan interfaces will start with 'vlan' - add the ID number (NOT a vlan ID, but matching them is recommended to avoid confusion)
-* Interface must be assigned to an exiting vlan
-  * If one doesn't exist or a new VLAN interface is needed, selecting 'New VLAN' on the drop down can be done to create a new VLAN.
-  * Select the virtual router to add the interface to
-  * Select the Security Zone to add the interface to
-
-### Loopback Interfaces
-* Loopbacks are logical interfaces that do not have a physical presence. They are assigned in a security zone and can be reached by their IP through another physical main or sub interface.
-* Typical use includes Management UI access, Global Protect interface, or IPSEC tunnel interface termination point.
-* Configure under Network > Interfaces > Loopback
-  * Loopback interfaces always start with 'loopback', which cannot be changed. the ID number is set by the admin
-  * Configured the same as a Layer 3 interface; Only exception is a loopback IP must be a /32 host IP.
-  * Set the VR and the Security Zone the LB will be added to.
 
 ### Layer 3 Interfaces
 * Layer 3 is able to route data between networks
@@ -116,7 +98,25 @@
   * The 'More Runtime Stats' on the Network > Virtual Routers page will pull up a new screen to show the stats on the current VR.
   * Routing and Route table has all known routes (RIB)
   * Forwarding Table has all routes of where traffic will be forwarded to (FIB)
-  * Static Route Monitoring tab will show the status of all Path Monitors configured.
+  * Static Route Monitoring tab will show the status of all Path Monitors configured
+  
+### VLAN Interfaces
+* VLAN are Layer 2 802.1q network
+* VLAN objects can be assigned and IP address, and connected to Layer 3 networks for Layer 3 routing
+* Configure under Network > Network > VLAN > Add
+* All vlan interfaces will start with 'vlan' - add the ID number (NOT a vlan ID, but matching them is recommended to avoid confusion)
+* Interface must be assigned to an exiting vlan
+  * If one doesn't exist or a new VLAN interface is needed, selecting 'New VLAN' on the drop down can be done to create a new VLAN.
+  * Select the virtual router to add the interface to
+  * Select the Security Zone to add the interface to
+
+### Loopback Interfaces
+* Loopbacks are logical interfaces that do not have a physical presence. They are assigned in a security zone and can be reached by their IP through another physical main or sub interface.
+* Typical use includes Management UI access, Global Protect interface, or IPSEC tunnel interface termination point.
+* Configure under Network > Interfaces > Loopback
+  * Loopback interfaces always start with 'loopback', which cannot be changed. the ID number is set by the admin
+  * Configured the same as a Layer 3 interface; Only exception is a loopback IP must be a /32 host IP.
+  * Set the VR and the Security Zone the LB will be added to.
 
 ### Policy-Based Forwarding
 * PBF rules are used to send specific traffic to an interface that is not the default route the traffic would follow from the routing table.
