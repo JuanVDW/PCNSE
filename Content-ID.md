@@ -2,9 +2,9 @@
 
 ### Overview
 * Scans traffic for/offers protection against/can do:
-    * Software Vulnerability exploits: detects attempts to exploit known software vulnerabilities
-    * Viruses: detects infected files crossing the firewall
-    * Spyware: detects spyware downloads and already infected system traffic
+    * Software Vulnerability exploits: detect attempts to exploit known software vulnerabilities
+    * Viruses: detect infected files crossing the firewall
+    * Spyware: detect spyware downloads and already infected system traffic
     * Malicious URL's: blocks URL's known to be locations that host or assist any of the content scanned with these profiles.
     * Restricted Files: tracks/blocks uploads/downloads based on application and/or file types
     * Data Filtering: identifies, logs and/or blocks specific data patterns
