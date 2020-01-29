@@ -4,7 +4,7 @@
 * Recon, Weaponize & Deliver, Exploitation, Installation, Command & Control, Act on Objective
 
 ### Security Operating Platform
-* Network Security: NGFW
+* Network Security: Next-Generation Firewall
     * Identifies and inspects all traffic
     * Blocks known threats
     * Sense unknown to cloud
@@ -28,8 +28,6 @@
 * Gathers potential threats from network and endpoints
 * Analyzes and correlates threat intel
 * Disseminates threat intel to network and endpoints
-
-
 
 ### Next Gen Firewall Architecture
 * PAN is a single-pass Parallel Processing system 
@@ -58,18 +56,14 @@
     * NGFW offer several options to help approach the zero-trust model
          * App-ID, User-ID, URL filtering, Vuln filtering, anti-spyware, anti-virus, Traps, file blocking, DOS protection, Zone Protection, Wildfire
 
-### Public Cloud Security
-* SaaS security provided by Apreture
-* Can be spun up on demand
-* Can be managed through Panorama, same or different device groups
-
 ### Firewall Offerings
 * Physical devices:
-    *  PA-220, PA-800, PA-5200 - Next Gen hardware
-    *  PA-7050 and PA-7080 are Chassis architecture
+    * PA-220, PA-800, PA-3200, PA-5200 are Next Gen hardware
+    * PA-7000 series are Chassis architecture for NGFW
+    * M-200, M-500/WF-500/600 : Panorama & WildFire
 * Virtual devices:
-    *  VM-700, VM-500, VM-300, VM-100, VM-50, VM-50lite
-    *  Supported environment
+    * VM-700, VM-500, VM-300, VM-100, VM-50, VM-50lite
+    * Supported environment
         * ESXi: All
         * KVM/Openstack: All
         * Hyper-V: All
@@ -80,5 +74,5 @@
     * IPSec throughput, all models: Varies according to model (originally was 250mbps, per the training, however documentation states otherwise. Please see the hardware spec sheet at the top of this post for specifics)
 * Virtual Systems
     * Ability to have seperate virtual firewalls in a single physical chassis
-    * Each system has its own zones, policies, administrators.
+    * Each system has its own zones, policies, administrators
     * Supported on the 3k/5k/7k models
