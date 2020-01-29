@@ -23,18 +23,18 @@
 ### Using App-ID in a Security Policy
 * Traffic can shift from one app to another during a session lifetime
 * As more traffic is received, it can also refine what the traffic it sees is
-* This is why several applications are sometimes needed; web browsing, Facebook base and facebook chat could all be in the same session.
+* This is why several applications are sometimes needed; web-browsing, facebook-base and facebook-chat could all be in the same session.
 * Signatures contain data on several versions of applications
 * Application dependance can be seen in the applications section under objects
-* Some objects have dependencies built in - example, facebook has web-browsing as a needed dependence
+* Some objects have dependencies built in - example, facebook-base has web-browsing & ssl as a needed dependence
 * Under Objects > Applications, you can find what applications have what implicit use of other applications.
     * Search for an application
     * Click the application
     * Look for the 'implicitly uses' to see what apps it will implicitly use
 * Application Filters can be used to allow access to a series of applications, such as Office application systems, or online streaming audio and video.
 * Application Groups can be used to group together several applications for easier deployment to firewall security policy rules. They also can be used for QoS and Policy Based Forwarding (PBF) Policies.
-* Applications, Filters and groups can be nested to several levels and added to policies.
-* Application groups are added to security policy rules just like single applications.
+* Applications, Filters and groups can be nested to several levels and added to policies
+* Application groups are added to security policy rules just like single applications
 * Under Objects > Services can be used to build custom services on specific ports. This can be used to narrow access on applications.
 * Application Block Page can be configured to block access to specific applications. If User ID is in use, it will use the name of the user. If not, it will use their IP address.
 
