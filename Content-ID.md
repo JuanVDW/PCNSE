@@ -23,7 +23,7 @@
 * Actions can include:
      * Allow: Permit without logging
      * Alert: Allow with logging
-     * Drop: drops and logs
+     * Drop: Drops and logs
      * Reset Client: TCP, sends a TCP reset to the client. UDP: Drops traffic/session
      * Reset Server: TCP: sends a TCP reset to the server. UDP: Drops traffic/session
      * Reset Both: TCP: sents TCP resets to both client and server. UDP: Drops the connection/session
@@ -44,8 +44,8 @@
 * Threat Name can be for 'any' for all, or a specific string to only scan for signatures matching that name
 * Actions can include:
      * Allow: Permit without logging
-     * Alert: Allow with Logging
-     * Drop: drops and logs
+     * Alert: Allow with logging
+     * Drop: Drops and logs
      * Reset Client: TCP, sends a TCP reset to the client. UDP: Drops traffic/session
      * Reset Server: TCP: sends a TCP reset to the server. UDP: Drops traffic/session
      * Reset Both: TCP: sents TCP resets to both client and server. UDP: Drops the connection/session
@@ -65,14 +65,14 @@
      * Default: Default action that will happen that will be applied to traffic. Generally used for PoC and initial deployments
 * Each individual vuln signature has a predefined default action. The default action can be seen under:
      * Objects > Security Profiles > Vulnerability Protection > Add > Exceptions - then select 'show all signatures' checkbox
-* New updates are released 2x a week from PAN. *
+* New updates are released 2x a week from PAN
 * Rules can be configured to take packet captures
 * Threat Name can be for 'any' for all, or a specific string to only scan for signatures matching that name
 * Categories can be for Any or a specific CVE/Vendor ID
 * Actions can include:
      * Allow: Permit without logging
-     * Alert: Allow with Logging
-     * Drop: drops and logs
+     * Alert: Allow with logging
+     * Drop: Drops and logs
      * Reset Client: TCP, sends a TCP reset to the client. UDP: Drops traffic/session
      * Reset Server: TCP: sends a TCP reset to the server. UDP: Drops traffic/session
      * Reset Both: TCP: sents TCP resets to both client and server. UDP: Drops the connection/session
@@ -84,8 +84,8 @@
 * File blocking can be done by extension or examination of files
 * Granular control can be done by (example) blocking .exe files from gmail, but allowing .exe's from FTP
 * Profiles have these actions available:
-     * Alert: Allow and Log
-     * Continue: Log incident, send user to a browser response page for them to review/continue/stop.
+     * Alert: Allow and log
+     * Continue: Log incident, send user to a browser response page for them to review/continue/stop
      * Block: Block file and log
 * Monitor > Logs > Data Filtering can be used to see the actions taken and the file name/type
 * Rules can be set for:
@@ -93,7 +93,7 @@
      * File Types
      * Direction (upload/download/both)
      * Action (alert/continue/block)
-* If a file matches multiple rules, the highest matching rule is applied.
+* If a file matches multiple rules, the highest matching rule is applied
 * If Continue is set, the transfer is halted to alert the user that a matched file is attempting to be downloaded. This can be set to help prevent 'drive-by' downloads, or downloads that are done without the user knowing or interaction by the user.
      * Continue only functions with web-browsing
 * The File Block can decode up to 4 layers of encoding. Encoding includes files such as .zip, .tar, docx, .gzip, etc
@@ -110,8 +110,8 @@
 
 ### Denial of Service Protection
 * DoS is Packet based, not session based
-* Use packet header info rather than signature matching.
-* These are not linked to Security Policies.
+* Use packet header info rather than signature matching
+* These are not linked to Security Policies
 * 2 types of protection:
      * Zone Protection:
          * Provides edge protection
@@ -133,32 +133,20 @@
             * Used to allow or deny non-IP protocols can move between zone
             * Include list will allow specified protocols only; Exclude list will allow all but the specified protocols
          * Zone Protection is enabled on a 'per-zone' basis
-         * Only one Profile can be set per zone
-     * DoS Policy & Profiles
+         * Only one profile can be set per zone
+     * DoS Protection Policy & Profiles
          * Provide flexible rules and matching criteria
          * Can be used for specific hosts that are critical or have been hit previously
          * This can be based on match criteria such as Source/Desination zone/interface, IP address, user and services
-         * Policy include:
-            * Protect:
-""not clear part"""
-Aggregate profile: applies limits to ALL incoming traffic
-
-Classified Profile: applies limits to a single IP address
-
-Allow: Permit all packets
-
-Deny: Drop all packets
-
-Added under: Polices > DoS Protection > Add
-
-Specify match for source/destination/option-protection tabs
-
-You can specify the aggregate and/or classified profile if Protect is selected
-
-Example setting is to protect a web server from attacks or floods.
-
-Added under: Objects > Security Profiles > DoS Protection > Add
-
-This will allow to set the profile options for flood proection. Syn, UDP, ICMP, ICMPv6 and Other IP.
-
-Resource Protection can be set to limit sessions to a host to prevent port depletion or resource (cpu/memory) exhaustion
+         * DoS Protection Policy
+             * Defines match criteria and action
+             * Added under: Polices > DoS Protection > Add
+         * DoS Protection Profiles
+         * Defines flood and max session limits
+         * Added under: Objects > Security Profiles > DoS Protection > Add
+         * Actions can be:
+             * Allow: Permit all packets
+             * Deny: Drop all packets
+             * Protect: matching traffic is limit by DoS Protection Profile
+                * Aggregate profile: applies limits to ALL incoming traffic
+                * Classified Profile: applies limits to a single IP address
