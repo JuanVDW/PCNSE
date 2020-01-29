@@ -2,7 +2,7 @@
 
 ### User-ID Overview
 * Identify users by username and user group
-* Creates Policies and view logs/reports based on user/group name
+* Creates policies and view logs/reports based on user/group name
 * Used in combination with App-ID allows for very granular control
 * Can be used to profile identified vs non-identified users for policy control
 * Prior to being ready for use, the FW needs to know the group mapping to match user to IP
@@ -11,11 +11,11 @@
     * PAN OS Integrated User ID agent
     * Windows Based User-ID Agent
     * Terminal Services Agent
-    * (other options - see below)
 * Integrated Vs Windows-Based Agents
     * Windows Agent uses Windows RPC to read the full security logs
         * Recommended for local deployments with the Windows Servers and Firewalls in the same physical network
-    * Integrated Agent uses Windows WMI to read security logs to map Username to IP
+        * Suitable for large remote sites
+    * Integrated Agent uses Windows WMI or WinRM to read security logs to map Username to IP
         * Uses much less bandwidth
         * Uses more of the FW CPU
         * Better for remote deployments of firewalls in small offices, labs, etc.
@@ -24,7 +24,7 @@
 * Multiple Methods available, which will depend on the OS's, apps and infrastructure
     * Can monitor Windows DC, Exchange servers, or Novell eDirectory for user auth session tables
     * Probes windows clients for file/printer mappings
-    * Captive Portal/GP Logins
+    * Captive Portal/GP logins
     * Terminal Services Agents for Windows RDP/Citrix
     * Syslog login/logout for NAC, 802.1x and Wireless AC's
     * Pan-OS XML API for devices that can send XML to the firewall
@@ -33,7 +33,7 @@
     * Unix/Linux Authentication
     * 802.1x Authentication
     * Windows and the User-ID agent can parse the Syslogs to help mapping users to IP's
-    * Multiple Profiles can be configured to read from different sources
+    * Multiple profiles can be configured to read from different sources
 * Domain Controller Monitoring
     * Monitors the Security Log of DC's
     * Continuously monitors logs for all login/logout events
@@ -42,7 +42,7 @@
     * An agent can only monitor one domain; for multiple domains, multiple agents would be needed.
     * Anyone who accesses file and printer shares also have their connections in the log read to map to their user ID
 * User-ID can be configured to use WMI to probe windows system
-    * This is useful for laptops and devices that may change IP's semi-frequently.
+    * This is useful for laptops and devices that may change IP's semi-frequently
     * NetBIOS is option and supported
     * WMI Probes are performed every 20 minutes (default)
 * Global Protect
@@ -58,10 +58,10 @@
 * Enable User-ID by the zone
     * Check the 'Enable User Identification' on the Network > Zones > (zone name)
     * Only enable on inside-facing zones, or it will attempt to identify any user on the internet if added on an outside facing zone.
-    * By default, all subnets in the source zone are mapped; the include/exclude list can be added/modified to include or exclude custom subnets
+    * By default, all subnets in the source zone are mapped; the include/exclude list can be added/modified to include or exclude custom subnets.
     * If WMI probing is enabled, it will only probe RFC1918 IP ranges (10/8, 172.16/12, 192.168/16); to add external IP's, they must be added to the include list.
-* Configure user mapping methods
-* Configure group mapping (optional)
+* Configure user mapping methods (under Device > User Identification > User Mapping)
+* Configure group mapping (optional, under Device > User Identification > Group Mapping Settings)
 * Modify FW Policies for user/group matching
 
 ### PAN-OS Integrated Agent configuration
