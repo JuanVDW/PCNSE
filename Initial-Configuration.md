@@ -57,10 +57,6 @@
   * administrator defined role based profiles
     * These can be granularity specified for specifically what they have access to, and functions they can change, update or view.
 * Local admin accounts can be set for minimum passwords, password aging and password complexity. Not enabled by default.
-* Create non-local admins by creating an authentication profile.
-  * Multiple servers can be used. LDAP, then RADIUS would be an example.
-  * Create Server profile, then (optional) auth sequence, then authentication profile.
-  * Allow list can be used for those that will be allowed to use certain auth profiles.
 
 ### Viewing and Filtering Logs
 * Clicking any link in the Monitor > Traffic (or other entries) will filter the logs to only show entries with those
