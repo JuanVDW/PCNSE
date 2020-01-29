@@ -5,24 +5,24 @@
     * Software Vulnerability exploits: detect attempts to exploit known software vulnerabilities
     * Viruses: detect infected files crossing the firewall
     * Spyware: detect spyware downloads and already infected system traffic
-    * Malicious URL's: blocks URL's known to be locations that host or assist any of the content scanned with these profiles.
+    * Malicious URL's: blocks URL's known to be locations that host or assist any of the content scanned with these profiles
     * Restricted Files: tracks/blocks uploads/downloads based on application and/or file types
     * Data Filtering: identifies, logs and/or blocks specific data patterns
-    * Wildfire Analysis: will upload suspect files to Wildfire for further analysis to determine if threat or benign.
+    * Wildfire Analysis: will upload suspect files to Wildfire for further analysis to determine if threat or benign
 * Security profiles must be added to a security policy to be activated
 * Security Profiles are applied to all packets for the life of a session
-* Security Profiles can be added to a group containing several security profiles for easier management, and applying specific types for specific rules.
-* Threat log keeps records of vuln, AV, Anti-SW that can be reviewed, and can be forwarded to an external log server.
+* Security Profiles can be added to a group containing several security profiles for easier management, and applying specific types for specific rules
+* Threat log keeps records of vuln, AV, Anti-SW that can be reviewed, and can be forwarded to an external log server
 
 ### AV Security Profiles
-* Default Policy is available out of the box. This is recommended for initial configurations and TAP gatherings
-* A custom policy is recommended. Options are to clone the default or make a new one from scratch
-* The profile has predefined application decoders for common apps: FTP, HTTP, IMAP, POP3, SMB, SMTP
+* Default Policy is available out of the box. This is recommended for initial configurations and TAP gatherings.
+* A custom policy is recommended. Options are to clone the default or make a new one from scratch.
+* The profile has predefined application decoders for common apps: FTP, HTTP, HTTP2, IMAP, POP3, SMB, SMTP
 * Virus signatures are release every 24 hours by PAN
-* Action is what will occur when a virus signature is detected.
+* Action is what will occur when a virus signature is detected
 * Actions can include:
      * Allow: Permit without logging
-     * Alert: Allow with Logging
+     * Alert: Allow with logging
      * Drop: drops and logs
      * Reset Client: TCP, sends a TCP reset to the client. UDP: Drops traffic/session
      * Reset Server: TCP: sends a TCP reset to the server. UDP: Drops traffic/session
