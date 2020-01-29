@@ -17,16 +17,13 @@
   * `request system private-data-reset` if you have CLI access
   * If no CLI access, reboot into MAINT mode [(see PAN documentation for further information)](https://live.paloaltonetworks.com/t5/Management-Articles/How-to-Enter-Maintenance-Mode-on-the-Palo-Alto-Networks-Firewall/ta-p/55082)
 * Hostname limited to 31 characters
-* Configure new IP if needed, hostname, domain name (if wanted), and gateway
-* MGT does updates for updates, DNS, NTP, unless done on a data port
-* Add Service route(s) if any are needed
 * HTTPS, SSH and Ping are enabled by default on the MGT interface
 * Minimum MGT config are IP Address, Netmask and Default Gateway
 * MGT port is used by default to access external management services, such as:
   * PAN Update Servers
   * NTP
   * DNS
-* Inband port can be set up to for service routes to perform these services which ports to retrieve them from if MGT port is not able to.
+* Inband port can be set up for service routes to perform these services if MGT port is not able to
 
 ### Configuration Management
 * Running config
