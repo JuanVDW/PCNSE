@@ -3,27 +3,33 @@
 ### Cyber Attack Lifecycle
 * Recon, Weaponize & Deliver, Exploitation, Installation, Command & Control, Act on Objective
 
-### NGFW
-* Identifies and inspects all traffic
-* Blocks known threats
-* Sense unknown to cloud
-* Extends to mobile and virtual networks
+### Security Operating Platform
+* Network Security: NGFW
+    * Identifies and inspects all traffic
+    * Blocks known threats
+    * Sense unknown to cloud
+    * Extends to mobile and virtual networks
+* Advanced Endpoint Protection: TRAPS protects endpoint
+    * Inspects all Processes and files
+    * Prevents known and unknown exploits
+    * Integrates with cloud to prevent known and unknown malware
+* Cloud Security: VM-series firewall
+* Cortex : Prevention, detection and response platform that runs on fully integrated endpoint, network and cloud data
+
+### Other items available
+* Panorama: Centralized management of all PAN firewall points
+* Prisma SaaS (Aperture): protection for cloud-based systems like box, sales force, etc. helps manage permissions and file scans. Focused on DLP, PCI, and other personally exploitable data.
+* Prisma Public Cloud = RedLock
+* AutoFocus: Hosted security service, provides aggregate info on threat intel from multiple sources
+* MineMeld: Aggregate data from multiple external threat intel sources (public and private)
+* GlobalProtect: VPN that puts traffic back through the firewall to ensure traffic scanning, traffic visibility and security.
 
 ### Threat Intel Cloud
 * Gathers potential threats from network and endpoints
 * Analyzes and correlates threat intel
 * Disseminates threat intel to network and endpoints
 
-### Advanced Endpoint Protection
-* Inspects all Processes and files
-* Prevents known and unknown exploits
-* Integrates with cloud to prevent known and unknown malware
 
-### Other items available
-* Panorama: Centralized management of all PAN firewall points.
-* AutoFocus: Hosted security service, provides aggregate info on threat intel from multiple sources
-* Aperture: protection for cloud-based systems like box, sales force, etc. helps manage permissions and file scans. focused on DLP, PCI, and other personally exploitable data.
-* GlobalProtect: VPN that puts traffic back through the firewall to ensure traffic scanning, traffic visibility and security.
 
 ### Next Gen Firewall Architecture
 * PAN is a single-pass Parallel Processing system 
@@ -51,6 +57,7 @@
     * Need to establish trust boundaries
     * NGFW offer several options to help approach the zero-trust model
          * App-ID, User-ID, URL filtering, Vuln filtering, anti-spyware, anti-virus, Traps, file blocking, DOS protection, Zone Protection, Wildfire
+
 ### Public Cloud Security
 * SaaS security provided by Apreture
 * Can be spun up on demand
