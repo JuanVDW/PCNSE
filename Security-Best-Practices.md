@@ -18,8 +18,8 @@
     * Address object groups, applications groups are examples that can be built/updated to help better organize FW rules.
 
 ### Heatmap and BPA
-* This compares your config to similar companies in your industry, and provides a 'Best Practice Assessment'. only available to employees and partners
-* Generate a tech support file, and downloaded
+* This compares your config to similar companies in your industry, and provides best practice recommendations. Only available to employees and partners
+* Generate a tech support file, save locally for uploading to the Heatmap & BPA online tool
 * Heatmap analyzes and provides an assessment with similar companies
 * BPA report will show a pass or fail based on best practices. Recommendations are provided to help remediate the issues.
 * Details are provided to show what criteria was used to come to this conclusion
