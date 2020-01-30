@@ -4,7 +4,7 @@
 * Dashboard
     * On the dashboard, individual widgets can be added and removed to have a customized display
     * A custom refresh counter can be set in the upper right hand corner
-* ACC
+* ACC (Application Command Center)
     * Interactive graph of traffic and applications going through the firewall
     * Threat graph shows the risk of traffic going through
     * Custom Tabs can be added, with custom widgets to be added with information specific to your network and security concerns
