@@ -20,7 +20,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 15. [Security Best Practices](Security-Best-Practices.md)
 
 ## EDU 120: PAN 8.1 - Managing Firewalls at Scale (Panorama)
-1.  Panorama Overview
+1.  [Panorama Overview](Panorama-Overview.md)
 2.  Panorama Initial Configuration
 3.  Adding Firewalls to Panorama
 4.  Configuring High Availability (HA)
