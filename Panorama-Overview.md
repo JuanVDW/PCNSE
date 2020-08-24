@@ -61,18 +61,18 @@
     * Intel Xeon 8-core CPU
     * 128GB DDR4/240GB SSD
     * Standard 16TB RAID storage for logs
-    * This device is generally deployed as a dedicated log collector, with a VM Panorama management device to administer.
+    * This device is generally deployed as a dedicated log collector, with a VM Panorama management device to administer
   * M500
     * Intel Xeon 6-core CPU
     * 128GB DDR4/240GB SSD
     * Up to 24TB storage for logs. Default is 4TB
-    * Deployed as a pair, this can service a busy PA-7000 in HSFM (high speed forwarding mode).
-    * This device is generally deployed as a dedicated log collector, with a VM Panorama management device to administer.
+    * Deployed as a pair, this can service a busy PA-7000 in HSFM (high speed forwarding mode)
+    * This device is generally deployed as a dedicated log collector, with a VM Panorama management device to administer
   * M600
     * 2 Intel Xeon 14-core CPU
     * 256GB DDR4 Ram/240GB SSD
     * Up to 48TB storage for logs; default is 16TB
-    * This device is used for large enterprises, or can be dedicated to a single location that processes a large amount of log entries.
+    * This device is used for large enterprises, or can be dedicated to a single location that processes a large amount of log entries
 * Panorama Modes (Physical)
   * Panorama Mode
     * Manage devices
@@ -89,8 +89,8 @@
     * Collects Logs
     * Legacy does not support logging/reporting enhancements made in 8.0+
     * Mode is available only when a Panorama VM is upgraded to 8.1
-    * If a legacy device is changed to another mode, it cannot be changed back to Legacy.
-    * Fresh install of 8.1, this mode is not available.
+    * If a legacy device is changed to another mode, it cannot be changed back to Legacy
+    * Fresh install of 8.1, this mode is not available
     * 8.1 Supports only the 3 modes below
   * Panorama Mode
     * Manage devices
@@ -109,4 +109,4 @@
   * Log Collector
     * 16 CPU's, 32gb RAM, max of 24TB of storage
   * Management only
-    * 4 CPU's, 8gb RAM, no storage needed beyond OS Disk.
+    * 4 CPU's, 8gb RAM, no storage needed beyond OS Disk
