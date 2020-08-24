@@ -27,7 +27,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 5.  Templates
 
 ## Comment
-For PCNSA exam only these topics are relevant:
+For PCNSA exam, only these topics are relevant:
 * [Platforms and Architecture](Platforms-and-Architecture.md)
 * [Initial Configuration](Initial-Configuration.md)
 * [Interface Configuration](Interface-Configuration.md)
