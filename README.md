@@ -22,7 +22,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 ## EDU 120: PAN 8.1 - Managing Firewalls at Scale (Panorama)
 1.  [Panorama Overview](Panorama-Overview.md)
 2.  [Panorama Initial Configuration](Panorama-Initial-Configuration.md)
-3.  Adding Firewalls to Panorama
+3.  [Adding Firewalls to Panorama](Adding-Firewalls-to-Panorama.md)
 4.  Configuring High Availability (HA)
 5.  Templates
 
