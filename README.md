@@ -23,8 +23,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 1.  [Panorama Overview](Panorama-Overview.md)
 2.  [Panorama Initial Configuration](Panorama-Initial-Configuration.md)
 3.  [Adding Firewalls to Panorama](Adding-Firewalls-to-Panorama.md)
-4.  Configuring High Availability (HA)
-5.  Templates
+4.  [Templates](Panorama-Templates.md)
 
 ## Comment
 For PCNSA exam, only these topics are relevant:
