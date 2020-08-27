@@ -28,3 +28,7 @@
       * Then the post-rules third 
       * Followed by default rules
     * Pre-rules and post-rules are read-only for the local admin
+* Policy rulebase settings can be used to enforce tags, descriptions, etc... when creating policies (since PAN 9.0)
+  * Can be set at global level, Panorame > Setup > Management > Policy Rulebase Settings or at template level Device > Setup > Management > Policy Rulebase Settings
+* Since PAN 9.0, the "Audit Comment Archive" can be used to track change made to rules
+  * The Rules Changes tab allows to view a side-by-side comparaison on two config versions
