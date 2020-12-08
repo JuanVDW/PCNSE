@@ -13,7 +13,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 8.  [Decryption](Decryption.md)
 9.  [Wildfire](Wildfire.md)
 10. [User-ID](User-ID.md)
-11. GlobalProtect
+11. [GlobalProtect](Global-Protect.md)
 12. Site to Site VPN's
 13. [Monitoring and Reporting](Monitoring-and-Reporting.md)
 14. [High Availability](High-Availability.md)
