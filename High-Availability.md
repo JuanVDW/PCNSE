@@ -2,13 +2,13 @@
 
 ### Overview
 * 2 firewalls can be configured in a High Availability pair
-* HA Provides:
+* HA provides:
     * Redundancy
     * Business Continuity
     * If one firewall fails, the second can continue service with little to no interruption
 * HA options can be deployed as:
     * Active/Passive: One active, one standby firewall
-    * Active/Active: Both Active, used in specific circumstances, such as asynchronous routing setups
+    * Active/Active: Both active, used in specific circumstances, such as asynchronous routing setups
 * Items Synchronized include:
     * Networks
     * Objects
@@ -20,20 +20,19 @@
     * HA Settings
     * Logs
     * ACC information
-* For a consolidated application and log view, Panorama must be used.
+* For a consolidated application and log view, Panorama must be used
 * PA-200 only supports HA-Lite
     * Lite is only available due to the low number of ports available on this model
 * A/P Deployment
     * Only one firewall is active
     * One firewall synchronized and ready to process traffic
     * No increase in session capacity or network throughput
-    * Supports VWire, Layer 2, and Layer 3 deployments
+    * Supports V-Wire, Layer 2, and Layer 3 deployments
     * A/P HA has simplistic design to help with implementation
 * A/A Deployment
     * Both firewalls are active and processing traffic
     * Both individually maintain routing and session tables, sync'd to the other
-    * Is for use in Asyncronous routing deployments
-    * No increase in throughput/session tables
+    * Is for use in asyncronous routing deployments
     * Supported in V-Wire and L3 deployments
 * HA Prerequisites
     * Both firewalls must be running the same hardware or VM model
@@ -43,14 +42,14 @@
     * Same dedicated HA interfaces
     * Licenses are unique to each FW; each needs matching licenses
     * Matching Slot configurations (for chassis 5000/7000 series)
-    * VM's must be on the same hyper-visor, and have same number of CPU Cores
+    * VM's must be on the same hypervisor, and have same number of CPU Cores
 
 ### HA Components and Operations
-* HA Control Link is L3 link that requires an IP address
+* HA Control Link (HA1) is L3 link that requires an IP address
     * Used to exchange heartbeats and hellos and HA state info
     * Used to exchange routing and user ID information
     * Active firewall uses this to exchange config change information
-* HA Datalink is a L2 Link, but can be configured in L3 that requires and IP
+* HA Datalink (HA2) is a L2 Link, but can be configured in L3 that requires and IP
     * L3 is required if the data links are not on the same subnet
     * In L2 mode, the Datalink uses ethernet type 0x7261
     * The Datalink synchronize sessions, forwarding table, IPSec SA's and ARP tables in the HA Pair
@@ -104,7 +103,7 @@
         * MGT Port is recommended if a dedicated HA port is not available
         * Add a gateway if the peer is in a different subnet
     * Control link can be encrypted
-        * Private keys will need to be exported/imported from the certificate configuration for this to function.
+        * Private keys will need to be exported/imported from the certificate configuration for this to function
     * Backup link can be configured using an in-band port
 * Configure the DataLink
     * If available, configured on the HA2 link
@@ -116,16 +115,16 @@
 * Election Settings
     * Device Priority can be set if one should be preferred to be the Primary
     * Preemptive can be set if a specific firewall should be primary if available. The firewall with the lower numerical value has the higher priority and will be primary if both are active and pre-empt is set.
-    * HA Timer can be changed, however leaving at recommended unless a specific reason is needed for change.
+    * HA Timer can be changed, however leaving at recommended unless a specific reason is needed for change
 * Set the passive link state to auto (optional)
 * Link Monitoring (optional)
     * Configured under Device > High Availability > Link and Path Monitoring
         * Different link groups can be configured with different failure conditions
-        * Example: Critical links can force a failover if any of the links fail. Other links can be set if all links fail.
+        * Example: critical links can force a failover if any of the links fail. Other links can be set if all links fail.
 * Path Monitoring (optional)
     * Configured under Device > High Availability > Link and Path Monitoring
-    * Options for VWire Path, VLAN Path and/or a Virtual Router Path
-        * A VWire will need a source and destination IP
+    * Options for V-Wire Path, VLAN Path and/or a Virtual Router Path
+        * A V-Wire will need a source and destination IP
         * Virtual Router monitoring does not need a source, as a route lookup will be done to determine the source
 
 ### Monitoring HA state
