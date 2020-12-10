@@ -46,7 +46,7 @@
 * Panorama comes in applicances or VM:
     * M100 - supports 8 terabytes
     * M500 - supports 24 terabytes
-    * VM - supports ?? petabytes
+    * VM - supports 24 terabytes
 * Logs can be configured to be sent to an external archive system (syslog/SIEM server)
     * Define the remote logging destination
     * Enable log forwarding for each type
