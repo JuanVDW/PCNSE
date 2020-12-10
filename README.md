@@ -25,6 +25,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 3.  [Adding Firewalls to Panorama](Adding-Firewalls-to-Panorama.md)
 4.  [Templates](Panorama-Templates.md)
 5.  [Device Groups](Panorama-Device-Groups.md)
+6.  Log Collection and Forwarding
 
 ## Comment
 For PCNSA exam, only these topics are relevant:
