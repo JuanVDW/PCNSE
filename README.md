@@ -31,7 +31,7 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 9.  Panorama Design
 10. Troubleshooting
 
-## EDU 114: Optimizing Firewall Threat Prevention
+## EDU 114: PAN 9.0 - Optimizing Firewall Threat Prevention
 1.  Overview
 2.  The Cyber-Attack Lifecycle
 3.  Block Packet-Based and Protocol-Based Attacks
