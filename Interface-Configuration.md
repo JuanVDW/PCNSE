@@ -85,6 +85,8 @@
 ### Tunnel Interfaces 
 * Used in VPN tunnel setup
 * Logical (virtual) interface that is used to deliver traffic between two endpoints
+* Can be GRE tunnel or IPSec tunnel interface
+* Must be associated to a VR
 
 ### Special interface types
 * Decrypt Mirror
@@ -97,13 +99,13 @@
 ### Virtual Routers
 * Used for Layer 3 IP routing
 * Supports one or more static routes
-* Supports multiple dynamic routing protocols, including RIPv2, OSPFv2, OSPFv3, BGPv4
+* Supports multiple dynamic routing protocols, including RIP, OSPF, OSPFv3, BGP
 * Supports Multicast routing protocols PIM-SM and PIM-SSM (both using pimv2). IGMP v1, v2, v3 are also supported on host-facing interfaces.
 * Configure under Network > Virtual Routers
   * Give Name
   * Add L3 main, sub ints or tunnel interfaces
     * When interfaces are added, the connected routes are automatically populated into the routing table for traffic forwarding
-  * Administrative Differences are used to determine routing decisions when identical destination routes are present.
+  * Administrative Distances are used to determine routing decisions when identical destination routes are present
 * To add a default static routes, click: Network > Virtual Routers > Static Routes > Add
   * Give the route a name
   * Add a default of 0.0.0.0/0
@@ -133,6 +135,11 @@
   * Routing and Route table has all known routes (RIB)
   * Forwarding Table has all routes of where traffic will be forwarded to (FIB)
   * Static Route Monitoring tab will show the status of all Path Monitors configured
+
+### Equal-Cost Multi-Path Routing
+* Networking feature that enables the firewall to use up to four equal-cost routes to the same destination
+* Permits load balanced flows
+* Dynamically shifts traffic to another ECMP member to the same destination if a link fails
 
 ### Policy-Based Forwarding
 * PBF rules are used to send specific traffic to an interface that is not the default route the traffic would follow from the routing table.
