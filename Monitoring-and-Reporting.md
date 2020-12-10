@@ -35,9 +35,10 @@
 * Under the logs, a CSV file can be exported with a maximum of up to 65,535 rows
     * Limit can be changed by updating the Max Rows field in Device > Setup > Management > Logging and Reporting Settings
 * In Scheduled Log Export, the logs exported will be up to the last scheduled export
-* Logs can be forwarded with:
-    * Panorama
-    * HTTP
+* Logs can be forwarded with/to :
+    * Panorama or Log Collectors
+    * Cloud-based Cortex Data Lake service
+    * HTTP payloads
     * Syslog SIEM
     * SNMP Manager
     * Email
