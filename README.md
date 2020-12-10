@@ -31,15 +31,29 @@ Based on https://www.reddit.com/r/paloaltonetworks/comments/9bxun8/pncse_study_g
 9.  Panorama Design
 10. Troubleshooting
 
+## EDU 114: Optimizing Firewall Threat Prevention
+1.  Overview
+2.  The Cyber-Attack Lifecycle
+3.  Block Packet-Based and Protocol-Based Attacks
+4.  Blocking Threats from Known-Bad Sources
+5.  Blocking Threats Using App-ID
+6.  Blocking Threats Using Custom Applications
+7.  Creating Custom Threat Signatures
+8.  Blocking Threats in Encrypted Traffic
+9.  Blocking Threats in Allowed Traffic
+10. Blocking Threats from Stolen Credentials
+11. Viewing Threat and Traffic Information
+
 ## Comment
-For PCNSA exam, only these topics are relevant:
-* [Platforms and Architecture](Platforms-and-Architecture.md)
-* [Initial Configuration](Initial-Configuration.md)
-* [Interface Configuration](Interface-Configuration.md)
-* [Security and NAT Policy Configuration](Security-and-NAT-Policy-Configuration.md)
-* [App-ID](App-ID.md)
-* [Content-ID](Content-ID.md)
-* [User-ID](User-ID.md)
-* [URL Filtering](URL-Filtering.md)
-* [Monitoring and Reporting](Monitoring-and-Reporting.md)
-* [Security Best Practices](Security-Best-Practices.md)
+* For PCNSE exam, EDU 114 is optional
+* For PCNSA exam, only these topics are relevant:
+  * [Platforms and Architecture](Platforms-and-Architecture.md)
+  * [Initial Configuration](Initial-Configuration.md)
+  * [Interface Configuration](Interface-Configuration.md)
+  * [Security and NAT Policy Configuration](Security-and-NAT-Policy-Configuration.md)
+  * [App-ID](App-ID.md)
+  * [Content-ID](Content-ID.md)
+  * [User-ID](User-ID.md)
+  * [URL Filtering](URL-Filtering.md)
+  * [Monitoring and Reporting](Monitoring-and-Reporting.md)
+  * [Security Best Practices](Security-Best-Practices.md)
