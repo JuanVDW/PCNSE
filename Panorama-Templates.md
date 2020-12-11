@@ -5,8 +5,8 @@
 * When working under the Network and Device tabs in Panorama, a specific template must be chosen where settings will be stored
 * Template stacks can be formed from individual templates, up to 8 layers
   * Settings in each later are inherited downward
-  * If there is a settings conflict, a lower layer will overwrite it
-  * Settings most commonly shared are generally put higher in the stack
+  * If there is a settings conflict, a higher layer will overwrite it
+  * Settings most commonly shared are generally put lower in the stack
   * Individual templates can be used in multiple stacks.
   * Firewall settings in a stack must be completed
     * Example: An interface must have all settings configured
@@ -22,14 +22,14 @@
   * Panorama 8.0+ supports up to 1024 template stacks
   * When pushing updates to a device, the FW will push the updated template settings to the firewall, and then execute a local commit to update the firewall
 * A template stack example:
-  * Template one (worldwide)
+  * Template 1 (local)
+    * Interface Settings
+  * Template 2 (country)
+    * SNMP, Syslog, DNS, Service Routes
+  * Template 3 (worldwide)
     * Logging profile settings
     * Administrator accounts
-  * Template Two (country)
-    * SNMP, Syslog, DNS, Service Routes
-  * Template Three (local)
-    * Interface Settings
-  * The above Templates will be: Worldwide->Country->Region
+  * The above Templates will be: local->country->worlwide
     * Country values will override the local settings, as it is higher in the template stack.
 * Common Template deployment scenarios can include:
   * Function: Sales/Marketing/Support
