@@ -6,7 +6,7 @@
 * SSL Establishment includes:
     * Client: requests SSL connection
     * Server: sends server public cert
-    * Client: cerifies Cert
+    * Client: verifies cert
     * Client: sends encrypted session key
     * Server: begins encrypted communications session
 * When an SSL session is first established or needs to re-establish a session and rekey, this is known as PFS (Perfect Forward Secrecy)
