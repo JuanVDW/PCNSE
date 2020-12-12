@@ -66,7 +66,7 @@
 * Steps in this process are:
     * Client sends request to external server through firewall
     * Firewall intercepts the SSL request
-    * Firewall then contacts the external server and sends that server the FW cert
+    * Firewall then contacts the external server and requests the server cert
     * External server responds with its server certificate; firewall validates certificate
     * The SSL session is then established between the server and the firewall
     * The firewall then sends a copy of the remote server cert, signed with the FW SSL certificate
@@ -84,15 +84,15 @@
     * A decryption profile allows check on both decrypted traffic and traffic excluded from decryption
         * Allows to block sessions unsupported protocols, cypher suites, or SSL client auth.
         * Block sessions based on certificate status: revoked, unknown, expired, etc
-        * After creating a profile, it can be applied to a decryption policy.
-        * A default profile is provided that can be used/cloned/modified.
+        * After creating a profile, it can be applied to a decryption policy
+        * A default profile is provided that can be used/cloned/modified
         * Rules for the decrypted traffic will need to be present. For example, if traffic is web-browsing, google docs, or another encrypted application setting, security policies allowing that traffic must be present or the traffic will be dropped as matching no FW rules.
 
 ### SSL Inbound Inspection
-* FW Can inspect inbound SSL traffic
+* FW can inspect inbound SSL traffic
 * The internal server's cert and private key must be loaded on the firewall
 * The firewall will decrypt and read the traffic, and then forwards the original encrypted traffic to the server
-    * Note that the traffic will be forwarded only if it is not blocked/dropped by a security policy on the firewall.
+    * Note that the traffic will be forwarded only if it is not blocked/dropped by a security policy on the firewall
 * To create an SSL inbound inspection policy:
     * Import the server certificate and private key into the firewall (PEM and PKCS12 formats supported)
     * Create a decryption policy under Policies > Decryption > Add - under Options, select 'Decrypt'
@@ -106,7 +106,7 @@
 * If an application fails, the site is added to the excluded cache list for 12 hours
 * Decryption Exclusion are apps that encryption is known to break
     * The prepopulated list is under Device > Certificate Management > SSL Decryption Exclusion
-    * Custom domains can be added to this list, and wildcards are supported.
+    * Custom domains can be added to this list, and wildcards are supported
 * If the decryption policy is set to an action of 'no-decrypt', the profile attached to the rule can still check for expired or untrusted certificates. This can be done under 'No Decryption' tab in the profile.
 * Decryption Mirroring can mirror decrypted traffic to a capture device for DLP and/or network forensics
     * Requires a (free) licence to activate; contact TAC support to get the license key. Key is perpetual, does not need renewal.
