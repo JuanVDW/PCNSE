@@ -120,7 +120,7 @@
             * Protects agains most common attack types, including UDP flood, Syn Flood, ICMP Floods
             * All Categories use a random early drop, except SYN (provide choice of RED or SYN Cookies)
          * Reconnaissance Protection:
-            * Protects against TCP/UDP/ICMP sweeps and port scans within the criteria set
+            * Protects against TCP/UDP/Host sweeps and port scans within the criteria set
             * Actions include:
                * Allow: Permits the scan
                * Alert: Generates an alert for each scan that matches the time interval
@@ -142,8 +142,8 @@
              * Defines match criteria and action
              * Added under: Polices > DoS Protection > Add
          * DoS Protection Profiles
-         * Defines flood and max session limits
-         * Added under: Objects > Security Profiles > DoS Protection > Add
+             * Defines flood and max session limits
+             * Added under: Objects > Security Profiles > DoS Protection > Add
          * Actions can be:
              * Allow: Permit all packets
              * Deny: Drop all packets
