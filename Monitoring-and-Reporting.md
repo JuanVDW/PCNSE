@@ -55,8 +55,10 @@
 * Log forwarding is configured under Objects > Log forwarding
     * The log objects that can be forwarded are broken down into categories: Traffic, Threat, Wildfire, URL, Data, GTP, Tunnel and Authentication.
 * Each security policy rule can have a log forwarding profile applied to each rule. Under the actions tab, the rule can be set to log at start, end, and a log forwarding profile set.
-* The Log Settings profiles can be viewed under Device > Log Settings.
-    * Events generally related to non-traffic specific firewall activity (e.g. Authentication, System, and HIP Match)
+
+### The Log Settings
+* Can be viewed under Device > Log Settings
+* Events generally related to non-traffic specific firewall activity (e.g. Authentication, System, and HIP Match)
 
 ### Syslog
 * Allows the aggregation of logs from different sources to be combined, compiled, analyzed and reports generated from
